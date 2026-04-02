@@ -1,0 +1,144 @@
+/* تنسيق عام بستايل ماين كرافت */
+body {
+    background-image: url('https://i.ibb.co/r2SF5SRV/spaceship-corridor.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'VT323', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* يضمن تغطية الشاشة بالكامل */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    image-rendering: pixelated;
+    overflow-x: hidden; /* منع التمرير الأفقي */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: row; /* الوضع الافتراضي للحاسوب */
+    align-items: flex-end;
+    gap: 20px;
+    position: relative;
+    z-index: 10;
+    max-width: 100%;
+}
+
+/* لوحة التحكم */
+.container {
+    background-color: #c6c6c6;
+    border: 4px solid #fff;
+    border-bottom-color: #555;
+    border-right-color: #555;
+    padding: 2rem;
+    text-align: center;
+    width: 450px;
+    box-shadow: 0 0 0 4px #000, 10px 10px 0 rgba(0,0,0,0.5);
+    image-rendering: pixelated;
+}
+
+h2 { 
+    color: #fff;
+    font-size: 2.2rem;
+    margin-top: 0;
+    text-shadow: 2px 2px 0 #3f3f3f;
+    -webkit-text-stroke: 1px #000;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #404040;
+    margin-bottom: 20px;
+}
+
+.download-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    border: 4px solid #a0a0a0;
+    border-top-color: #555;
+    border-left-color: #555;
+    background-color: #000;
+    color: #e0e0e0;
+    box-sizing: border-box;
+}
+
+#downloadBtn {
+    padding: 10px;
+    font-family: 'VT323', monospace;
+    font-size: 1.4rem;
+    background-color: #999;
+    border: 4px solid #fff;
+    border-bottom-color: #555;
+    border-right-color: #555;
+    cursor: pointer;
+    color: #eee;
+    box-shadow: 0 0 0 4px #000;
+}
+
+#downloadBtn:active {
+    transform: translateY(2px);
+}
+
+/* ستيف والفرن */
+.steve-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.steve-img {
+    width: 120px;
+    height: auto;
+    margin-bottom: -5px;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.minecraft-block {
+    width: 80px;
+    height: 80px;
+    background-image: url('https://i.ibb.co/27zxWVrw/minecraft-smoker.png');
+    background-size: cover;
+    border: 4px solid #3c3c3c;
+    border-top-color: #7d7d7d;
+    border-left-color: #7d7d7d;
+    box-shadow: 0 0 0 4px #000;
+}
+
+/* --- تعديلات الهواتف --- */
+@media (max-width: 768px) {
+    .main-wrapper {
+        flex-direction: column; /* ترتيب عمودي للهاتف */
+        align-items: center;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 320px;
+        padding: 1.5rem;
+    }
+
+    h2 { font-size: 1.8rem; }
+
+    .steve-img { width: 100px; }
+}
